@@ -21,7 +21,7 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/ecordell/bndlr/cmd"
+import "github.com/ecordell/deliverance/cmd"
 
 func main() {
   cmd.Execute()

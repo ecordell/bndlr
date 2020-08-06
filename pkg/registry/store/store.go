@@ -7,7 +7,7 @@ import (
 	"github.com/opencontainers/go-digest"
 	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/ecordell/bndlr/pkg/image"
+	"github.com/ecordell/deliverance/pkg/image"
 )
 
 type Store interface {

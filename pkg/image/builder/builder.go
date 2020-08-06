@@ -5,10 +5,10 @@ import (
 
 	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/ecordell/bndlr/pkg/image"
-	"github.com/ecordell/bndlr/pkg/image/layer"
-	"github.com/ecordell/bndlr/pkg/image/manifest"
-	"github.com/ecordell/bndlr/pkg/registry/store"
+	"github.com/ecordell/deliverance/pkg/image"
+	"github.com/ecordell/deliverance/pkg/image/layer"
+	"github.com/ecordell/deliverance/pkg/image/manifest"
+	"github.com/ecordell/deliverance/pkg/registry/store"
 )
 
 // Builder is used build manifests with particular configurations

@@ -6,12 +6,12 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
-	"github.com/ecordell/bndlr/pkg/registry"
-	"github.com/ecordell/bndlr/pkg/registry/common"
-	"github.com/ecordell/bndlr/pkg/registry/filestore"
-	"github.com/ecordell/bndlr/pkg/registry/memory"
-	"github.com/ecordell/bndlr/pkg/registry/store"
-	"github.com/ecordell/bndlr/pkg/signals"
+	"github.com/ecordell/deliverance/pkg/registry"
+	"github.com/ecordell/deliverance/pkg/registry/common"
+	"github.com/ecordell/deliverance/pkg/registry/filestore"
+	"github.com/ecordell/deliverance/pkg/registry/memory"
+	"github.com/ecordell/deliverance/pkg/registry/store"
+	"github.com/ecordell/deliverance/pkg/signals"
 )
 
 type StoreType string
@@ -59,9 +59,11 @@ to quickly create a Cobra application.`,
 			logrus.SetLevel(logrus.DebugLevel)
 		}
 
-		resolver := registry.NewResolver(pushOpts.username, pushOpts.password, pushOpts.configs...)
+		resolver, err := registry.NewResolver(pushOpts.configs[0], false, nil)
+		if err != nil {
+			return err
+		}
 		var store store.Store
-		var err error
 		if pushOpts.storeType == string(MemoryStoreType) {
 			store = memory.NewMemoryStore()
 		} else if pushOpts.storeType == string(TmpFileStoreType) {

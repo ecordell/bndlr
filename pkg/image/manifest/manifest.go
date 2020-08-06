@@ -7,7 +7,7 @@ import (
 	"github.com/opencontainers/go-digest"
 	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/ecordell/bndlr/pkg/image/layer"
+	"github.com/ecordell/deliverance/pkg/image/layer"
 )
 
 // A ManifestDescriptor can generate manifests for a given target
@@ -90,7 +90,7 @@ func NewMinimalV22Config(digests []digest.Digest) ([]byte, ocispec.Descriptor, e
 		// Required by quay
 		History: []ocispec.History{
 			{
-				CreatedBy: "bndlr",
+				CreatedBy: "deliverance",
 			},
 		},
 	}

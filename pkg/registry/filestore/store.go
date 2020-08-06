@@ -10,8 +10,8 @@ import (
 	"github.com/opencontainers/go-digest"
 	ocispec "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/ecordell/bndlr/pkg/image"
-	"github.com/ecordell/bndlr/pkg/registry/store"
+	"github.com/ecordell/deliverance/pkg/image"
+	"github.com/ecordell/deliverance/pkg/registry/store"
 )
 
 type FileStore struct {
@@ -21,7 +21,7 @@ type FileStore struct {
 var _ store.Store = &FileStore{}
 
 func NewTmpFileStore() (*FileStore, error) {
-	tmpdir, err := ioutil.TempDir("", "bndlr-")
+	tmpdir, err := ioutil.TempDir("", "deliverance-")
 	if err != nil {
 		return nil, err
 	}

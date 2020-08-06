@@ -7,9 +7,9 @@ import (
 	"github.com/containerd/containerd/remotes"
 	"github.com/opencontainers/go-digest"
 
-	"github.com/ecordell/bndlr/pkg/image/builder"
-	"github.com/ecordell/bndlr/pkg/image/layer"
-	"github.com/ecordell/bndlr/pkg/registry/store"
+	"github.com/ecordell/deliverance/pkg/image/builder"
+	"github.com/ecordell/deliverance/pkg/image/layer"
+	"github.com/ecordell/deliverance/pkg/registry/store"
 )
 
 // This package contains aggregate functions that wire together common options exposed by underlying components
